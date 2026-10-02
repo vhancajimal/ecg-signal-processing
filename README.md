@@ -43,6 +43,20 @@ The estimated average heart rate in the analyzed segment was approximately:
 
 **74.6 BPM**
 
+### Detection Performance
+
+The R-peak detector was compared with the reference beat annotations from MIT-BIH Record 100.
+
+For the analyzed segment:
+
+- True positives: 37
+- False positives: 0
+- False negatives: 0
+- Sensitivity: 100%
+- Positive Predictive Value (PPV): 100%
+
+These results are specific to the analyzed segment and do not represent performance across the full database.
+
 ## Repository Structure
 
 ```text
