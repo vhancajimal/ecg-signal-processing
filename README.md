@@ -51,7 +51,7 @@ ecg-signal-processing/
 ├── results/
 ├── src/
 └── README.md
-```text
+```markdown
 
 ## Limitations
 
