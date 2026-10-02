@@ -51,3 +51,20 @@ ecg-signal-processing/
 ├── results/
 ├── src/
 └── README.md
+## Limitations
+
+The current R-peak detector is a simple first implementation based on amplitude thresholding and minimum peak distance.
+
+## Future Improvements
+
+- ECG filtering
+- more robust R-peak detection
+- comparison with reference annotations
+- heart-rate variability analysis
+- longer ECG recordings
+- feature extraction
+- arrhythmia classification
+
+## Status
+
+Work in progress.
