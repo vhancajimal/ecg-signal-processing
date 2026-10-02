@@ -1,29 +1,53 @@
 # ECG Signal Processing
 
-Biomedical signal processing project focused on the analysis of electrocardiogram (ECG) signals.
+Biomedical signal processing project focused on ECG analysis using Python and public data from the MIT-BIH Arrhythmia Database.
 
-## Objectives
+## Project Goals
 
-The goal of this project is to:
+This project explores basic ECG signal processing techniques, including:
 
-- visualize ECG signals
-- remove noise using digital filtering
-- detect R-peaks
-- calculate heart rate
-- explore basic feature extraction from ECG data
+- ECG visualization
+- R-peak detection
+- RR interval calculation
+- Heart-rate estimation
+- Basic physiological signal analysis
+
+## Dataset
+
+The project uses ECG recordings from the MIT-BIH Arrhythmia Database available through PhysioNet.
 
 ## Tools
 
 - Python
 - NumPy
-- SciPy
 - Matplotlib
-- Pandas
+- WFDB
+- Jupyter Notebook
+- Git / GitHub
 
-## Dataset
+## Current Results
 
-Public ECG data from PhysioNet will be used.
+A first analysis was performed using MIT-BIH record 100.
 
-## Project Status
+The workflow:
 
-Work in progress.
+1. Load the ECG signal
+2. Visualize the raw ECG
+3. Detect R-peaks using a simple threshold-based method
+4. Calculate RR intervals
+5. Estimate beat-to-beat heart rate
+
+The estimated average heart rate in the analyzed segment was approximately:
+
+**74.6 BPM**
+
+## Repository Structure
+
+```text
+ecg-signal-processing/
+├── data/
+├── notebooks/
+│   └── 01_ecg_visualization.ipynb
+├── results/
+├── src/
+└── README.md
