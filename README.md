@@ -9,12 +9,12 @@ This project explores basic ECG signal processing techniques, including:
 - ECG visualization
 - R-peak detection
 - RR interval calculation
-- Heart-rate estimation
-- Basic physiological signal analysis
+- heart-rate estimation
+- basic physiological signal analysis
 
 ## Dataset
 
-The project uses ECG recordings from the MIT-BIH Arrhythmia Database available through PhysioNet.
+The project uses ECG recordings from the **MIT-BIH Arrhythmia Database**, accessed through the WFDB library.
 
 ## Tools
 
@@ -23,19 +23,21 @@ The project uses ECG recordings from the MIT-BIH Arrhythmia Database available t
 - Matplotlib
 - WFDB
 - Jupyter Notebook
-- Git / GitHub
+- Git
+- GitHub
 
 ## Current Results
 
-A first analysis was performed using MIT-BIH record 100.
+A first analysis was performed using **MIT-BIH Record 100**.
 
-The workflow:
+The current workflow:
 
-1. Load the ECG signal
-2. Visualize the raw ECG
+1. Load a public ECG recording
+2. Visualize the ECG signal
 3. Detect R-peaks using a simple threshold-based method
 4. Calculate RR intervals
 5. Estimate beat-to-beat heart rate
+6. Visualize the estimated heart rate over time
 
 The estimated average heart rate in the analyzed segment was approximately:
 
@@ -51,22 +53,28 @@ ecg-signal-processing/
 ├── results/
 ├── src/
 └── README.md
-```markdown
+```
 
 ## Limitations
 
 The current R-peak detector is a simple first implementation based on amplitude thresholding and minimum peak distance.
 
+It is intended as an introductory implementation and is not designed for clinical use or robust ECG analysis.
+
 ## Future Improvements
+
+Planned improvements include:
 
 - ECG filtering
 - more robust R-peak detection
 - comparison with reference annotations
 - heart-rate variability analysis
-- longer ECG recordings
-- feature extraction
+- analysis of longer ECG recordings
+- ECG feature extraction
 - arrhythmia classification
 
 ## Status
 
 Work in progress.
+
+The project will be expanded progressively as additional signal-processing methods are implemented.
