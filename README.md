@@ -51,6 +51,7 @@ ecg-signal-processing/
 ├── results/
 ├── src/
 └── README.md
+
 ## Limitations
 
 The current R-peak detector is a simple first implementation based on amplitude thresholding and minimum peak distance.
