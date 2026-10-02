@@ -65,8 +65,8 @@ ecg-signal-processing/
 ├── data/
 ├── results/
 ├── src/
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ## Limitations
