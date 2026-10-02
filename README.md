@@ -1,91 +1,90 @@
 # ECG Signal Processing
 
-Biomedical signal processing project focused on ECG analysis using Python and public data from the MIT-BIH Arrhythmia Database.
+A small biomedical signal-processing project using ECG data from the
+MIT-BIH Arrhythmia Database.
+
+The project demonstrates a basic pipeline for ECG preprocessing,
+R-peak detection, heart-rate estimation, and validation against
+reference beat annotations.
 
 ## Project Goals
 
-This project explores basic ECG signal processing techniques, including:
-
-- ECG visualization
-- R-peak detection
-- RR interval calculation
-- heart-rate estimation
-- basic physiological signal analysis
+- Load and visualize real ECG data
+- Reduce baseline drift and high-frequency noise
+- Detect R-peaks automatically
+- Calculate RR intervals and heart rate
+- Compare detected beats with MIT-BIH reference annotations
 
 ## Dataset
 
-The project uses ECG recordings from the **MIT-BIH Arrhythmia Database**, accessed through the WFDB library.
+The project uses **Record 100** from the MIT-BIH Arrhythmia Database,
+accessed through the WFDB Python package.
 
-## Tools
+The current analysis uses a **15-second ECG segment**.
 
-- Python
-- NumPy
-- Matplotlib
-- WFDB
-- Jupyter Notebook
-- Git
-- GitHub
+## Signal Processing Pipeline
+
+1. Load ECG data
+2. Apply a 0.5–40 Hz Butterworth band-pass filter
+3. Detect R-peaks using `scipy.signal.find_peaks`
+4. Calculate RR intervals
+5. Estimate beat-to-beat heart rate
+6. Compare detections with reference annotations
+7. Evaluate detector performance
 
 ## Current Results
 
-A first analysis was performed using **MIT-BIH Record 100**.
+For the analyzed 15-second segment of Record 100:
 
-The current workflow:
-
-1. Load a public ECG recording
-2. Visualize the ECG signal
-3. Detect R-peaks using a simple threshold-based method
-4. Calculate RR intervals
-5. Estimate beat-to-beat heart rate
-6. Visualize the estimated heart rate over time
-
-The estimated average heart rate in the analyzed segment was approximately:
-
-**74.6 BPM**
-
-### Detection Performance
-
-The R-peak detector was compared with the reference beat annotations from MIT-BIH Record 100.
-
-For the analyzed segment:
-
-- True positives: 37
+- Reference beats: 19
+- True positives: 19
 - False positives: 0
 - False negatives: 0
 - Sensitivity: 100%
 - Positive Predictive Value (PPV): 100%
 
-These results are specific to the analyzed segment and do not represent performance across the full database.
+These results apply only to this segment and should not be interpreted
+as overall detector performance across the MIT-BIH database.
+
+## Tools
+
+- Python
+- NumPy
+- SciPy
+- Matplotlib
+- WFDB
+- Jupyter Notebook
+- Git / GitHub
 
 ## Repository Structure
 
 ```text
 ecg-signal-processing/
-├── data/
 ├── notebooks/
-│   └── 01_ecg_visualization.ipynb
+│   └── 01_ecg_signal_processing.ipynb
+├── data/
 ├── results/
 ├── src/
+├── requirements.txt
 └── README.md
 ```
 
 ## Limitations
 
-The current R-peak detector is a simple first implementation based on amplitude thresholding and minimum peak distance.
+The current implementation is a proof of concept based on a single, short ECG segment.
 
-It is intended as an introductory implementation and is not designed for clinical use or robust ECG analysis.
+The detection parameters have not yet been validated across different patients, rhythms, ECG morphologies, or noise conditions.
 
-## Future Improvements
+## Future Work
 
 Planned improvements include:
 
-- ECG filtering
-- more robust R-peak detection
-- comparison with reference annotations
-- heart-rate variability analysis
-- analysis of longer ECG recordings
-- ECG feature extraction
-- arrhythmia classification
+- Evaluate additional MIT-BIH records
+- Analyze longer ECG recordings
+- Test parameter robustness
+- Perform heart-rate variability analysis
+- Extract additional ECG features
+- Explore arrhythmia classification
 
 ## Status
 
